@@ -17,3 +17,15 @@
   transition: all 0.8s;
   background-color: #d886f7;
 }
+
+.remove-task-button {
+  background-color: #c197d2;
+  font-size: 20px;
+  color: #c00000;
+  cursor: pointer;
+  border: none;
+}
+
+.remove-task-button:hover {
+  background-color: #d886f7;
+}
