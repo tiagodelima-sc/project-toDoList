@@ -1,0 +1,16 @@
+.task-container {
+  background-color: #c197d2;
+  margin: 8px 0;
+  padding: 15px 20px;
+  display: flex;
+  border-radius: 5px;
+  justify-content: space-between;
+  color: #eee;
+  align-items: center;
+  cursor: pointer;
+}
+
+.task-container:hover {
+  transition: all 0.8s;
+  background-color: #d886f7;
+}
