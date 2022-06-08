@@ -12,6 +12,8 @@ const AddBtn = ({ handleTaskAddition }) => {
 
   const handleAddTaskClick = () => {
     handleTaskAddition(inputData);
+    //limpando input
+    setInputData("");
   };
 
   return (

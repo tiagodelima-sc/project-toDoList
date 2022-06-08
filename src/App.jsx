@@ -1,4 +1,6 @@
 import React, { useState } from "react";
+import { v4 as uuidv4 } from "uuid";
+
 import Tasks from "./components/Tasks";
 import AddBtn from "./components/AddBtn";
 
@@ -25,12 +27,27 @@ const App = () => {
     },
   ]);
 
+  //completar tarefa
+  const handleTaskClick = (taskId) => {
+    const newTasks = tasks.map((task) => {
+      if (task.id == taskId)
+        return {
+          ...task,
+          completed: !task.completed,
+        };
+      return task;
+    });
+
+    setTasks(newTasks);
+  };
+
+  //add nova tarefa
   const handleTaskAddition = (taskTitle) => {
     const newTasks = [
       ...tasks,
       {
         title: taskTitle,
-        id: Math.random(15),
+        id: uuidv4(),
         completed: false,
       },
     ];
@@ -41,7 +58,7 @@ const App = () => {
   return (
     <div className="container">
       <AddBtn handleTaskAddition={handleTaskAddition} />
-      <Tasks tasks={tasks} />
+      <Tasks tasks={tasks} handleTaskClick={handleTaskClick} />
     </div>
   );
 };
