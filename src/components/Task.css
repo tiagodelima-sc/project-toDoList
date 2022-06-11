@@ -10,6 +10,7 @@
 }
 
 .task-title {
+  font-weight: bold;
   cursor: pointer;
 }
 

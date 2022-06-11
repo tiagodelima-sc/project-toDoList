@@ -1,9 +1,15 @@
+
 /*Card principal*/
 .container {
   max-width: 500px;
-  margin: 30px auto;
+  margin: 50px auto;
   overflow: auto;
-  border: 2px solid #613659;
+  border: 4px solid #613659;
   padding: 50px;
-  border-radius: 3px;
+  border-radius: 4px;
+}
+
+.container:hover{
+  transition: ease-out 1s;
+  box-shadow: 6px 3px 15px #613659;
 }

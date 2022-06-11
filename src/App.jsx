@@ -8,8 +8,9 @@ import AddBtn from "./components/AddBtn";
 import "./App.css";
 
 const App = () => {
-  //let message = "teste";
-  //Lista de tarefas
+
+  //Lista de tarefas = Guardando tarefa dentro do state
+  //Lista com 5 objetos
   const [tasks, setTasks] = useState([
     {
       id: "1",
@@ -26,6 +27,18 @@ const App = () => {
       title: "Ir na reuniao na quinta-feira",
       completed: true,
     },
+
+    {
+      id: "4",
+      title: "Participar do desenvolvimento de um jogo",
+      completed: false,
+    },
+
+    {
+      id: "5",
+      title: "Participar da reunião de terça-feiras as 10:30am",
+      completed: true,
+    }
   ]);
 
   //completar tarefa
@@ -42,8 +55,9 @@ const App = () => {
     setTasks(newTasks);
   };
 
-  //add nova tarefa
+  //add nova tarefa no state
   const handleTaskAddition = (taskTitle) => {
+    
     const newTasks = [
       ...tasks,
       {
@@ -58,11 +72,13 @@ const App = () => {
 
   //remove tarefa
   const handleTaskDeletion = (taskId) => {
-    const newTasks = tasks.filter((task) => (task.id = !taskId));
+    //pegar toda as tasks que tem o id diferente de taskId
+    const newTasks = tasks.filter((task) => task.id =! taskId);
     setTasks(newTasks);
   };
 
   return (
+    //Invocando os componentes no app
     <>
       <div className="container">
         <Header />
